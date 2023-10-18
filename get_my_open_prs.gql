@@ -1,0 +1,27 @@
+query {
+	viewer {
+		name
+		pullRequests(states: [OPEN], first: 10) {
+			totalCount
+			nodes {
+				url
+				latestReviews(first: 10) {
+					totalCount
+					nodes {
+						author {
+							login
+						}
+						state
+						comments(first: 10) {
+							totalCount							
+							nodes {
+								body
+								updatedAt
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,14 @@
+query {
+	search(first: 10, type: ISSUE, query: "is:open is:pr review-requested:krishnatippur archived:false") {
+		issueCount
+		nodes {
+			__typename
+			... on PullRequest {
+				author {
+					login
+				}
+				url
+			}
+		}
+	}
+}

@@ -1,0 +1,10 @@
+query {
+	repository(name: "github-scripts", owner: "krishnatippur") {
+		owner {
+			login
+		}
+		name
+		hasVulnerabilityAlertsEnabled
+		isSecurityPolicyEnabled
+	}
+}
